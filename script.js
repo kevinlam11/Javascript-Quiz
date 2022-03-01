@@ -1,6 +1,6 @@
-// Questions and Answer
+var startButton = document.querySelector("#start-button");
+startButton.addEventListener("click", startGame);
 
-var questionElement = document.getElementById("Question");
-var Question1 = "Question 1";
-var Answer1 = [];
-console.log(Question1);
+function startGame() {
+  console.log("the game will start");
+}
