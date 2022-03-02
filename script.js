@@ -4,22 +4,22 @@ var questionScreen = document.querySelector("#question-screen");
 startButton.addEventListener("click", startGame);
 
 var currentQuestion = 0;
-
+// Javascript questions
 var questions = [
   {
-    title: "This is the first question",
-    choices: ["a", "b", "c", "d"],
-    correctAnswer: "d",
+    title: "What is a data type with two possible value of true or false?",
+    choices: ["string", "character", "integer", "boolean"],
+    correctAnswer: "boolean",
   },
   {
-    title: "This is the second question",
-    choices: ["a", "b", "c", "d"],
-    correctAnswer: "d",
+    title: "What is a single object used to present text, numbers or symbol?",
+    choices: ["boolean", "character", "string", "integer"],
+    correctAnswer: "character",
   },
   {
-    title: "This is the third question",
-    choices: ["a", "b", "c", "d"],
-    correctAnswer: "d",
+    title: "What is a series oof characters interpreted by a script?",
+    choices: ["string", "boolean", "character", "integer"],
+    correctAnswer: "string",
   },
 ];
 
