@@ -8,4 +8,4 @@ I have created a website that prompts you to go through a series of questions an
 
 ## Screenshot
 
-![My password page ](./JavascriptQuiz.png)
+![My-Javascript-Quiz-Page ](./JavascriptQuiz.png)
