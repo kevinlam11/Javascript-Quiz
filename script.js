@@ -1,3 +1,4 @@
+// All the varients
 var startButton = document.querySelector("#start-button");
 var welcomeScreen = document.querySelector("#welcome-screen");
 var questionScreen = document.querySelector("#question-screen");
@@ -9,15 +10,13 @@ var submitScoreForm = document.querySelector("#submit-score-form");
 var previousScores = document.querySelector("#previous-scores");
 startButton.addEventListener("click", startGame);
 submitScoreForm.addEventListener("submit", submitScore);
-
 var timerInterval;
 var secondsRemaining = 15;
-
 var currentQuestion = 0;
 var score = 0;
-
 var savedScores = [];
 
+// Adds scoreboard
 function populateScoreboard() {
   if (localStorage.getItem("savedScores")) {
     previousScores.innerHTML = "";
@@ -111,7 +110,7 @@ function endGame() {
   clearInterval(timerInterval);
   endScreen.classList.remove("hidden");
 }
-
+// Adds scoreboard to local storage
 function submitScore(e) {
   e.preventDefault();
   var toBeSaved = { initials: e.target.children[1].value, score: score };
