@@ -1,9 +1,15 @@
 var startButton = document.querySelector("#start-button");
 var welcomeScreen = document.querySelector("#welcome-screen");
 var questionScreen = document.querySelector("#question-screen");
+var endScreen = document.querySelector("#end-screen");
+var timer = document.querySelector("#timer-element");
 startButton.addEventListener("click", startGame);
 
+var timerInterval;
+var secondsRemaining = 5;
+
 var currentQuestion = 0;
+
 // Javascript questions
 var questions = [
   {
@@ -26,6 +32,17 @@ var questions = [
 function startGame() {
   //hide welcomeScreen
   welcomeScreen.classList.add("hidden");
+  //adds time element
+  timer.classList.remove("hidden");
+  timer.innerText = secondsRemaining;
+  timerInterval = setInterval(function () {
+    secondsRemaining--;
+    timer.innerText = secondsRemaining;
+    if (secondsRemaining <= 0) {
+      endGame();
+    }
+  }, 1000);
+
   //show questionScreen
   questionScreen.classList.remove("hidden");
   displayQuestion();
@@ -53,5 +70,14 @@ function evauluateAnswer() {
 
   //display the next question
   currentQuestion++;
-  displayQuestion();
+  if (currentQuestion >= questions.length) {
+    endGame();
+  } else displayQuestion();
+}
+
+function endGame() {
+  questionScreen.classList.add("hidden");
+  // timer.classList.add("hidden");
+  clearInterval(timerInterval);
+  endScreen.classList.remove("hidden");
 }
